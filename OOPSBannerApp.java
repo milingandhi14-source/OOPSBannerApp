@@ -1,12 +1,13 @@
 /*
- * OOPSBannerApp UC4 – Render OOPS Banner using Array & Loop
+ * OOPSBannerApp UC5 – Array Initialization
+ * Declare and initialize the array in a single statement
  */
 
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // UC1 Content
+        // UC1 Information
         System.out.println("Welcome to OOPSBanner application");
         System.out.println("OOPS Concepts:");
         System.out.println("1. Encapsulation");
@@ -16,17 +17,18 @@ public class OOPSBannerApp {
 
         System.out.println();
 
-        // UC4 Implementation using Array + Loop
-        String[] lines = new String[7];
+        // UC5 Implementation
+        String[] lines = {
+            String.join(" ", " *** ", " *** ", " **** ", " ***** "),
+            String.join(" ", "*   *", "*   *", "*   *", "*     "),
+            String.join(" ", "*   *", "*   *", "*   *", "*     "),
+            String.join(" ", "*   *", "*   *", "**** ", " ***  "),
+            String.join(" ", "*   *", "*   *", "*     ", "    * "),
+            String.join(" ", "*   *", "*   *", "*     ", "*   * "),
+            String.join(" ", " *** ", " *** ", "*     ", " ***  ")
+        };
 
-        lines[0] = String.join(" ", " *** ", " *** ", " **** ", " ***** ");
-        lines[1] = String.join(" ", "*   *", "*   *", "*   *", "*     ");
-        lines[2] = String.join(" ", "*   *", "*   *", "*   *", "*     ");
-        lines[3] = String.join(" ", "*   *", "*   *", "**** ", " ***  ");
-        lines[4] = String.join(" ", "*   *", "*   *", "*     ", "    * ");
-        lines[5] = String.join(" ", "*   *", "*   *", "*     ", "*   * ");
-        lines[6] = String.join(" ", " *** ", " *** ", "*     ", " ***  ");
-
+        // Loop to print banner
         for (String line : lines) {
             System.out.println(line);
         }
