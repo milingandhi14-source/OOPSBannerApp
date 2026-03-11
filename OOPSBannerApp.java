@@ -1,15 +1,12 @@
+/*
+ * OOPSBannerApp UC3 – OOPS Banner Application (Use Case 3)
+ * This program prints OOPS in banner format using String.join()
+ * instead of + operator for better memory efficiency.
+ */
+
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
-
-        System.out.println("Welcome to OOPSBanner application");
-        System.out.println("OOPS Concepts:");
-        System.out.println("1. Encapsulation");
-        System.out.println("2. Inheritance");
-        System.out.println("3. Polymorphism");
-        System.out.println("4. Abstraction");
-
-        System.out.println();
 
         System.out.println(String.join(" ", " *** ", " *** ", " **** ", " ***** "));
         System.out.println(String.join(" ", "*   *", "*   *", "*   *", "*     "));
