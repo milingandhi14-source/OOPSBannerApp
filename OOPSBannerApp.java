@@ -1,13 +1,7 @@
-/*
- * OOPSBannerApp UC5 – Array Initialization
- * Declare and initialize the array in a single statement
- */
-
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // UC1 Information
         System.out.println("Welcome to OOPSBanner application");
         System.out.println("OOPS Concepts:");
         System.out.println("1. Encapsulation");
@@ -17,20 +11,48 @@ public class OOPSBannerApp {
 
         System.out.println();
 
-        // UC5 Implementation
-        String[] lines = {
-            String.join(" ", " *** ", " *** ", " **** ", " ***** "),
-            String.join(" ", "*   *", "*   *", "*   *", "*     "),
-            String.join(" ", "*   *", "*   *", "*   *", "*     "),
-            String.join(" ", "*   *", "*   *", "**** ", " ***  "),
-            String.join(" ", "*   *", "*   *", "*     ", "    * "),
-            String.join(" ", "*   *", "*   *", "*     ", "*   * "),
-            String.join(" ", " *** ", " *** ", "*     ", " ***  ")
-        };
+        String[] O = buildO();
+        String[] P = buildP();
+        String[] S = buildS();
 
-        // Loop to print banner
-        for (String line : lines) {
-            System.out.println(line);
+        for (int i = 0; i < 7; i++) {
+            System.out.println(String.join(" ", O[i], O[i], P[i], S[i]));
         }
+    }
+
+    public static String[] buildO() {
+        return new String[]{
+            " *** ",
+            "*   *",
+            "*   *",
+            "*   *",
+            "*   *",
+            "*   *",
+            " *** "
+        };
+    }
+
+    public static String[] buildP() {
+        return new String[]{
+            "**** ",
+            "*   *",
+            "*   *",
+            "**** ",
+            "*    ",
+            "*    ",
+            "*    "
+        };
+    }
+
+    public static String[] buildS() {
+        return new String[]{
+            " ****",
+            "*    ",
+            "*    ",
+            " *** ",
+            "    *",
+            "    *",
+            "**** "
+        };
     }
 }
