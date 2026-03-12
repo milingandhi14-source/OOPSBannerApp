@@ -1,28 +1,12 @@
 /*
- * OOPSBannerApp – Combined UC1 to UC7
- * UC7 introduces CharacterPattern class to store banner patterns
+ * OOPSBannerApp – Final Version UC1 to UC8
+ * UC8 uses HashMap to store character patterns and render banner
  */
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class OOPSBannerApp {
-
-    // UC7: Class to store character and its pattern
-    static class CharacterPattern {
-        private char character;
-        private String[] pattern;
-
-        public CharacterPattern(char character, String[] pattern) {
-            this.character = character;
-            this.pattern = pattern;
-        }
-
-        public char getCharacter() {
-            return character;
-        }
-
-        public String[] getPattern() {
-            return pattern;
-        }
-    }
 
     public static void main(String[] args) {
 
@@ -35,8 +19,10 @@ public class OOPSBannerApp {
         System.out.println("4. Abstraction");
         System.out.println();
 
-        // UC7: Create character pattern objects
-        CharacterPattern O = new CharacterPattern('O', new String[]{
+        // Create HashMap for character patterns
+        Map<Character, String[]> patternMap = new HashMap<>();
+
+        patternMap.put('O', new String[]{
                 " *** ",
                 "*   *",
                 "*   *",
@@ -46,7 +32,7 @@ public class OOPSBannerApp {
                 " *** "
         });
 
-        CharacterPattern P = new CharacterPattern('P', new String[]{
+        patternMap.put('P', new String[]{
                 "**** ",
                 "*   *",
                 "*   *",
@@ -56,7 +42,7 @@ public class OOPSBannerApp {
                 "*    "
         });
 
-        CharacterPattern S = new CharacterPattern('S', new String[]{
+        patternMap.put('S', new String[]{
                 " ****",
                 "*    ",
                 "*    ",
@@ -66,16 +52,29 @@ public class OOPSBannerApp {
                 "**** "
         });
 
-        // Store characters for word "OOPS"
-        CharacterPattern[] word = {O, O, P, S};
+        String word = "OOPS";
 
-        // Print banner
-        for (int i = 0; i < 7; i++) {
+        renderBanner(word, patternMap);
+    }
+
+    public static void renderBanner(String word, Map<Character, String[]> map) {
+
+        int height = 7;
+
+        for (int i = 0; i < height; i++) {
+
             StringBuilder line = new StringBuilder();
-            for (CharacterPattern cp : word) {
-                line.append(cp.getPattern()[i]).append(" ");
+
+            for (char c : word.toCharArray()) {
+
+                String[] pattern = map.get(c);
+
+                if (pattern != null) {
+                    line.append(pattern[i]).append(" ");
+                }
             }
-            System.out.println(line);
+
+            System.out.println(line.toString());
         }
     }
 }
